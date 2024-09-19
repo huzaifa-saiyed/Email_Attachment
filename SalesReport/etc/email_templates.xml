@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="kitchen_sales_report_report_group_daily_sales_report_template" label="Report with record" file="report_with_record.html" type="html" module="Kitchen_SalesReport" area="frontend"/>
+    <template id="kitchen_sales_report_report_group_daily_report_template_without_record" label="Report without record" file="report_without_record.html" type="html" module="Kitchen_SalesReport" area="frontend"/>
+    
+    <template id="kitchen_sales_report_report_group_weekly_sales_report_template" label="Weekly Report with record" file="weekly_report_with_record.html" type="html" module="Kitchen_SalesReport" area="frontend"/>
+    <template id="kitchen_sales_report_report_group_weekly_report_template_without_record" label="Weekly Report without record" file="weekly_report_without_record.html" type="html" module="Kitchen_SalesReport" area="frontend"/>
+
+</config>

@@ -1,0 +1,49 @@
+<!--@subject {{trans "Welcome to Jarlin Cabinetry"}} @-->
+
+<!--@vars {
+"var store.frontend_name":"Store Name",
+"var this.getUrl($store, 'customer/account/')":"Customer Account URL",
+"var this.getUrl($store,'customer/account/createPassword/',[_query:[id:$customer.id,token:$customer.rp_token],_nosid:1])":"Create Password URL",
+"var customer.email":"Customer Email", 
+"var customer.name":"Customer Name" 
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">
+    {{trans "Hello"}} {{trans "%name," name=$customer.name}}
+</p>
+
+<p>
+    {{trans "After much hard work and dedication, we are delighted to announce the launch of our newly designed website on June 1st 2023!."}}
+</p>
+
+<p>
+    {{trans "Our goal is to provide to ours customers with a more effective way to navigate our products and services by creating and following up your orders online, and more. We will be continuing to improve the site while striving to give you the best experience possible in the RTA cabinet industry, and we appreciate your undertstanding and support during this time!"}}
+</p>
+
+<p>
+    {{trans 
+    'To check out our new platform, visit us at <a href="%website_url">%website_url</a> after June 1st 2023.'
+    website_url="$this.getUrl()"
+    |raw}}
+</p>
+
+<p>
+    {{trans
+    'You may use your shared email address as the Username and <a href="%create_password_url">Create the password</a> at the first attempt of your login on our website.'
+    create_password_url="$this.getUrl($store,'customer/account/createPassword/',[_query:[id:$customer.id,token:$customer.rp_token],_nosid:1])"
+    |raw}}
+</p>
+
+<p>
+    {{trans "You may create your new online account through “Become Dealer” page to start seamless online ordering expereince. However, please note, our online order system is only supporting credit card payment method for now."}}
+</p>
+
+<p>
+    {{trans "If you have any questions, comments, or suggestions, or if you encounter any technical difficulties with the new site, please contact our team by phone at (843)-898-8022 or email at info@jarlincabinetry.com."}}
+</p>
+
+<p>{{trans "Thank You!"}}</p>
+
+{{template config_path="design/email/footer_template"}}

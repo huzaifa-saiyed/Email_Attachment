@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="kitchen_sales_report" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Sales Report Configuration</label>
+            <tab>kitchen</tab>   
+            <resource>Kitchen_SalesReport::sales_report</resource>
+           <group id="report_group" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+              <label>Daily Sales Report Configuration</label>  
+             <field id="daily_sales_report_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Template For Daily Sales Report with record</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+             </field>
+             <field id="daily_report_template_without_record" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Template For Daily Sales Report without record</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+             </field>
+             <field id="weekly_sales_report_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Template For weekly Sales Report with record</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+             </field>
+              <field id="weekly_report_template_without_record" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Template For weekly Sales Report without record</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+             </field>
+             <field id="send_report_multiple_email" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                     <label>Add Multiple email comma seprated to get daily report</label>
+            </field>
+          </group>
+           <group id="send_report_group" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+              <label>Send Daily Sales Report</label>  
+             <field id="customdate" translate="label" type="date" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Date</label>
+                    <frontend_model>Kitchen\SalesReport\Block\Adminhtml\Date</frontend_model>
+            </field>
+            <field id="send_multiple_email" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Multiple email comma seprated to get daily report</label>
+            </field>
+            <field id="emailbutton" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Kitchen\SalesReport\Block\Adminhtml\Config\Source\Button</frontend_model>
+            </field>
+          </group>
+       </section>
+ </system>
+</config>
